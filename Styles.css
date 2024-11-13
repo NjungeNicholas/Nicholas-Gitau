@@ -1,0 +1,65 @@
+body {
+    background-color: rgba(0, 0, 0, 0.877);
+    color: rgba(255, 255, 255, 0.925);
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family : Segoe UI;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    color: rgba(255, 166, 0, 0.884);
+    font-size: large;
+}
+p {
+    font-size: medium;
+}
+
+a, button {  
+    color: #f1c40fd8;
+}
+
+a:hover, button:hover {
+    color: #E74C3C;
+}
+div {
+    margin: 10px;
+}
+
+abbr {
+    text-decoration: underline;
+}
+.tech-communities {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin: 1%;
+    margin-bottom: 10px;
+    
+
+}
+@media (max-width: 790px) {
+    .tech-communities {
+        display: block;
+        width: 100%;
+        margin: 2;
+        margin-right: 5%;
+    }
+}
+footer {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    font-size: small;
+}
+.topnav {
+    overflow: hidden;
+}
+.topnav a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 2px;
+    font-size: large;
+}
