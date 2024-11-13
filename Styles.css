@@ -38,12 +38,21 @@ abbr {
     
 
 }
+.project {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
 @media (max-width: 790px) {
     .tech-communities {
         display: block;
         width: 100%;
         margin: 2;
         margin-right: 5%;
+    }
+    .project {
+        flex-direction: column;
+        align-self: flex-start;
     }
 }
 footer {
