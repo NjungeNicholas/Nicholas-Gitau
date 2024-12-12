@@ -124,7 +124,7 @@ footer {
     margin: 2px;
     font-size: large;
 }
-.post{
+.posts{
     margin: 10px;
     padding: 10px;
     border: 1px solid var(--text-color);
