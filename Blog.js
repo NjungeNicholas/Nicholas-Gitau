@@ -1,4 +1,7 @@
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
+    loadPosts();
+});
+function loadPosts () {
     const postsContainer = document.getElementById("posts");
 
     // Fetch the XML file
@@ -33,4 +36,4 @@
             postsContainer.innerHTML = "<p>Failed to load posts.</p>";
             console.error(error);
         });
-})();
+};
