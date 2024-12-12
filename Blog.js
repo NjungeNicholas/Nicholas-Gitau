@@ -13,7 +13,7 @@ function loadPosts () {
             const posts = xml.getElementsByTagName("post");
 
             // Clear loading message
-            let output  = "";
+            postsContainer.innerHTML = "";
 
             // Loop through each post and display it
             Array.from(posts).forEach(post => {
@@ -22,18 +22,18 @@ function loadPosts () {
                 const content = post.getElementsByTagName("content")[0].textContent;
 
                 // Create a blog post element
-                output += `
+                const postElement = `
                     <div class="post">
                         <h2><a href = ${title}>${title}</a></h2>
                         <p><em>${date}</em></p>
                         <p>${content}</p>
                     </div>
                 `;
-                document.body.innerHTML += output;
-            });
+                postsContainer.innerHTML += postElement;
+            })
         })
         .catch(error => {
-            document.body.innerHTML = "<p>Failed to load posts.</p>";
+            postsContainer.innerHTML = "<p>Failed to load posts.</p>";
             console.error(error);
         });
 };
