@@ -13,27 +13,27 @@ function loadPosts () {
             const posts = xml.getElementsByTagName("post");
 
             // Clear loading message
-            postsContainer.innerHTML = "";
+            let output  = "";
 
             // Loop through each post and display it
-            for (let post of posts) {
+            Array.from(posts).forEach(post => {
                 const title = post.getElementsByTagName("title")[0].textContent;
                 const date = post.getElementsByTagName("date")[0].textContent;
                 const content = post.getElementsByTagName("content")[0].textContent;
 
                 // Create a blog post element
-                const postElement = `
+                output += `
                     <div class="post">
                         <h2><a href = ${title}>${title}</a></h2>
                         <p><em>${date}</em></p>
                         <p>${content}</p>
                     </div>
                 `;
-                postsContainer.innerHTML += postElement;
-            }
+                document.body.innerHTML += output;
+            });
         })
         .catch(error => {
-            postsContainer.innerHTML = "<p>Failed to load posts.</p>";
+            document.body.innerHTML = "<p>Failed to load posts.</p>";
             console.error(error);
         });
 };
