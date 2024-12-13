@@ -125,9 +125,10 @@ footer {
     font-size: large;
 }
 .posts{
-    margin: 10px;
-    padding: 10px;
+    color: var(--text-color);
+}
+.post{
     border: 1px solid var(--text-color);
     border-radius: 5px;
-    background-color: var(--background-color);
+    padding: 10px;
 }
