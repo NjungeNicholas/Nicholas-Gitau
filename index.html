@@ -8,86 +8,234 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="index.js"></script>
+    <style>
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin: 20px 10px;
+            flex-wrap: wrap;
+        }
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-style: italic;
+            margin: 0 0 8px 0;
+            line-height: 1.1;
+        }
+        .hero-text .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--text-color);
+            margin: 0 0 12px 0;
+            opacity: 0.85;
+        }
+        .hero-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .hero-links a {
+            font-size: 1.4rem;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .hero-links a:hover {
+            transform: scale(1.2);
+            color: var(--secondary-color);
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px;
+        }
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .community-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 10px;
+        }
+        .community-card {
+            flex: 1 1 280px;
+            border: 1px solid var(--text-color);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .community-card img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            flex-shrink: 0;
+            border-radius: 4px;
+        }
+        .timeline {
+            margin: 10px;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 20px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+        .timeline-item h3 {
+            margin: 0 0 4px 0;
+            font-size: 1rem;
+        }
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .timeline-date {
+            font-size: 0.78rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        @media (max-width: 600px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-links { justify-content: center; }
+        }
+    </style>
 </head>
 <body>
-    <header >
-        <div class = "topnav" id ="navigation">
-        <img src="images/Logo.jpg" alt="logo" width="auto" height="100%">
-        <a href="index.html" target="_parent">Home</a>
-        <a href="Projects.html">Projects</a>
-        <a href="Blog.xhtml">Blog</a>
-        <a onclick="switchTheme()">Switch Theme</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            <i class="fa fa-bars"></i>
-        </a>
+    <header>
+        <div class="topnav" id="navigation">
+            <img src="images/Logo.jpg" alt="logo" width="auto" height="100%">
+            <a href="index.html" target="_parent">Home</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Blog.xhtml">Blog</a>
+            <a onclick="switchTheme()">Switch Theme</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
-    </header> 
-    <br>
-    <div style=" display: flex; margin: 10px;">
-            <img src = "images/Nick.jpg" alt = "Nicholas Gitau" width = "auto" height = "100%">
-        <div>
-            <p style = "margin: 10px; font-family: Segoe UI; font-size:5vw; font-style: italic;">
-                I'm <span style="color: rgba(255, 166, 0, 0.884);">Nicholas Gitau</span> <br>
-                <span style = "font-size: 3vw;">Tech enthusiast</span>
+    </header>
+ 
+    <!-- Hero -->
+    <div class="hero">
+        <img src="images/Nick.jpg" alt="Nicholas Gitau" class="hero-img">
+        <div class="hero-text">
+            <h1>I'm <span style="color: var(--accent-color);">Nicholas Gitau</span></h1>
+            <p class="tagline">Android Developer &amp; AI Builder</p>
+            <div class="hero-links">
+                <a href="https://github.com/NjungeNicholas" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+                <a href="https://linkedin.com/in/nicholas-gitau" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                <a href="mailto:nicholasnjunge16@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+            </div>
         </div>
     </div>
+ 
+    <!-- About -->
     <div>
-    <h2 style = "margin: 10px; font-family: Segoe UI;">Background</h2>
-    <p style = "margin: 10px; font-family: Segoe UI;">
-        I am a student at Machakos University pursuing a degree in Information Technology.
-        Being an undergraduate, I have been able to gain a lot of insights in computer programming,
-        data communication and networks, IT fundamentals, and many more.</p>
-    <p style = "margin: 10px; font-family: Segoe UI;">
-        I desire to venture into web development and software development in the near future. 
-        I am also desiring to learn more about data science and machine learning.</p>
-    </div>
-    <div>
-        <h2 style = "margin: 10px; font-family: Segoe UI; font-size: large;">Tech Journey</h2>
-        <p style = "margin: 10px; font-family: Segoe UI; font-size: medium;">
-            I started my tech journey in 2024 when I joined Machakos University. I was introduced to several of the tech communities here on campus such as 
-            <abbr title="Microsoft Learn Student Ambassadors">MLSA</abbr>, 
-            <abbr title="Google Developers Group On campus"> GDG On Campus</abbr> and the <u>ICP Community.</u>
-            Here I have been able to acquire knowledge on Microsoft technologies, Google Cloud, and building web3 applications on the ICP blockchain.
+        <h2>About Me</h2>
+        <p>
+            I'm a third-year Information Technology student at Machakos University with a focus on Android development and AI integration.
+            I build real products — from fitness-powered screen-time control apps to AI-driven tutoring platforms — and I organise
+            tech community initiatives on campus to share knowledge and grow the local ecosystem.
+        </p>
+        <p>
+            Alongside my degree, I'm pursuing the ALX Data Science and Cybersecurity tracks, and I'm actively looking for
+            industrial attachment opportunities where I can apply my Android and AI skills in a real-world environment.
         </p>
     </div>
-    <div  class="tech-communities">
-        <img src = "images/MLSA.jpeg" alt = "MLSA" width = "auto" height = "100%" style = "align-self: center;">
-       <div style="margin:0px;">
-        <h2 style="margin: 0px; font-family: Segoe UI; font-size: large;">Microsoft Learn Student Ambassadors (MLSA)</h2>
-        <p style="margin: 0px; font-family: Segoe UI; font-size: medium;">
-            The Microsoft Learn Student Ambassadors (MLSA) program is a global group of on-campus student leaders who are passionate about technology and eager to help fellow students.
-            As an MLSA, I have had the opportunity to engage with a vibrant community of like-minded individuals, participate in exclusive events, and gain access to valuable resources and training.
-            This program has significantly enhanced my technical skills in Power BI, Azure, Github and many more.
-        </p>
-       </div>  
-    </div>
-    <div  class="tech-communities">
-        <img src = "images/GDG On Campus.png" alt = "GDG On-Campus" width = "auto" height = "100%" style = "align-self: center;">
-        <div style="margin:0px;">
-            <h2 style=" margin:0px; font-family: Segoe UI; font-size: large;">Google Developers Group On Campus (GDG On Campus)</h2>
-            <p style=" margin:0px; font-family: Segoe UI; font-size: medium;">
-                The Google Developers Group On Campus (GDG On Campus) is a community of students who are passionate about technology and eager to learn and share their knowledge with others.
-                As a member of GDG On Campus, I have had the opportunity to participate in a wide range of events and  workshops, where I have learned new skills on Google Cloud, Kotlin and android development, met like-minded individuals, and gained valuable experience.
-                This community has provided me with a platform to collaborate with others, share my knowledge, and contribute to the tech ecosystem.
-            </p>
+</br>
+    <!-- Skills -->
+    <div>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">Jetpack Compose</span>
+            <span class="skill-tag">Android SDK</span>
+            <span class="skill-tag">Room / SQLCipher</span>
+            <span class="skill-tag">Gemini API</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Google Cloud Platform</span>
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Power BI</span>
         </div>
     </div>
-    <div class="tech-communities" style = "margin-right: 10px;">
-        <img src = "images/ICP.jpeg" alt = "ICP" width = "auto" height = "100%" style = "align-items: center;">
-        <div style="margin:0px;">
-            <h2 style="margin: 0px; font-family: Segoe UI; font-size: large;">Internet Computer Protocol (ICP) Community</h2>
-            <p style="margin: 0px; font-family: Segoe UI; font-size: medium;">
-                The Internet Computer Protocol (ICP) Community is a group of developers who are passionate about building web3 applications on the ICP blockchain.
-                As a member of the ICP Community, I have had the opportunity to learn about blockchain technology, smart contracts, and decentralized applications (dApps).
-                This community has provided me with a platform to collaborate with others, share my knowledge, and contribute to the decentralized web.
-            </p>
+</br>
+    <!-- Tech Journey Timeline -->
+    <div>
+        <h2>Tech Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023 — Year 1</div>
+                <h3>Joined Machakos University &amp; Tech Communities</h3>
+                <p>Enrolled in the BSc Information Technology programme. Joined MLSA and the GDG On Campus, gaining exposure to Microsoft Azure, Google Cloud, Kotlin, and Web development.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 — Hackathon, Machakos University</div>
+                <h3>First Hackathon Builds</h3>
+                <p>Competed at a hackathon at Machakos University where the ideas for EventSafi were born — reflecting an entrepreneurial approach to building products that solve real Kenyan problems.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <h3>Community Leadership &amp; Teaching</h3>
+                <p>Organised a <strong>Kotlin/Android Study Jam</strong> on campus, ran a <strong>campus hackathon</strong>, and hosted <strong>Gemini CLI teaching sessions</strong>, helping fellow students get hands-on with AI tooling.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 — Present</div>
+                <h3>ALX Data Science &amp; Cybersecurity</h3>
+                <p>Concurrently pursuing ALX tracks in Data Science (Python, ML) and Cybersecurity alongside Year 3 university coursework, building depth across the full-stack of modern tech skills.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 — Year 3</div>
+                <h3>Active Builder &amp; Researcher</h3>
+                <p>Currently shipping multiple Android and AI projects, conducting undergraduate research on Socratic questioning tools for critical thinking, and preparing for industrial attachment.</p>
+            </div>
         </div>
     </div>
+ 
+    <!-- Communities -->
+    <div>
+        <h2>Tech Communities</h2>
+        <div class="community-grid">
+            <div class="community-card">
+                <img src="images/MLSA.jpeg" alt="MLSA">
+                <div>
+                    <h3>Microsoft Learn Student Ambassadors (MLSA)</h3>
+                    <p>A global group of on-campus leaders passionate about technology. Through MLSA I've built skills in Power BI, Azure, and GitHub, and engaged with a wide network of student technologists.</p>
+                </div>
+            </div>
+            <div class="community-card">
+                <img src="images/GDG On Campus.png" alt="GDG On-Campus">
+                <div>
+                    <h3>Google Developers Group On Campus (GDG On Campus)</h3>
+                    <p>A student community focused on Google technologies. GDG accelerated my growth in Kotlin and Android development, Google Cloud, and gave me a platform to run my own events and Study Jams.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
     <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        <p>You can email me at <a href="mailto:nicklausautno18@gmail.com">nicklausautno18@gmail.com</a></p>
+        <p>&copy; 2026 Nicholas Gitau. All rights reserved.</p>
+        <p>You can email me at <a href="mailto:nicholasnjunge16@gmail.com">nicholasnjunge16@gmail.com</a></p>
     </footer>
-
-
 </body>
 </html>
+ 
